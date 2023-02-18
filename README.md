@@ -15,23 +15,22 @@ Hero <|-- "1" Hand
 Deck "inf"<|--"20" Card
 Card <|-- CardState
 Hand <|-- "0.." Card
-
 class Card{
-    int id
-    string type
-    string description
-    dict properties
-    string name
-    int cost
-    CardState state
-    draw()
-    play()
-    kill()
+int id
+string type
+string description
+dict properties
+string name
+int cost
+CardState state
+draw()
+play()
+kill()
 }
 class CardState{
-    bool drawn
-    bool played
-    bool alive
+bool drawn
+bool played
+bool alive
 }
 class Game{
     bool win
@@ -70,4 +69,5 @@ class Grave{
     list grave
     bool empty
 }
+
 ```mermaid
