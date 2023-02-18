@@ -7,8 +7,8 @@ C-->D;
 ```
 
 ```mermaid
-direction LR
 classDiagram
+direction RL
 Game "1"<|--"2" Hero
 Game <|-- Grave
 Hero <|--"0.." Deck
