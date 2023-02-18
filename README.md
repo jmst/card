@@ -5,7 +5,7 @@ Game "1"<|--"2" Hero
 Game <|-- Grave
 Hero <|--"0.." Deck
 Hero <|-- "1" Hand
-Hero <|-- "1" Grave"
+Hero <|-- "1" Grave
 Deck "inf"<|--"20" Card
 Card <|-- CardState
 Hand <|-- "0.." Card
