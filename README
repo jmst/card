@@ -1,50 +1,63 @@
-** database of card
-reference card data
-generate properties of card from parsing description language
+classDiagram
+Game "1"<|--"2" Hero
+Game <|-- Grave
+Hero <|--"0.." Deck
+Hero <|-- "1" Hand
+Deck "inf"<|--"20" Card
+Card <|-- CardState
+Hand <|-- "0.." Card
 
-* UML
-
-[[https://en.wikipedia.org/wiki/Unified_Modeling_Language][UML Wikipedia]]
-[[https://www.omg.org/spec/UML/2.5.1/PDF#%5B%7B%22num%22%3A799%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C107.1%2C735.3%2C0%5D][UML Classes Spec]]
-[[https://plantuml.com/][PlantUML]]
-
-properties (battlecry, deathrattle, etc.)
-stats (atk, hp)
-state (drawn, played, alive)
-
-** Classes
-#+begin_src plantuml :file images/objects.svg
-  object firstObject
-  object "My Second Object" as o2
-  object thirdObject
-  diamond dia
-
-  object user
-  user : name = "Dummy"
-  user : id = 123
-
-  object user {
-	  name = "Dummy"
-	  id = 123
-  }
-
-  class Card {
-	  id:integer
-	  type:string
-	  description:string
-	  properties:TBC
-	  name:string
-	  stats:integer
-	  state:boolean
-	  cost:integer
-  }
-#+end_src
-
-#+RESULTS:
-[[file:images/objects.svg]]
-
-#+begin_src
-#+end_src
-
-#+RESULTS:
-[[file:images/objects.svg]]
+class Card{
+    int id
+    string type
+    string description
+    dict properties
+    string name
+    int cost
+    CardState state
+    draw()
+    play()
+    kill()
+}
+class CardState{
+    bool drawn
+    bool played
+    bool alive
+}
+class Game{
+    bool win
+    list cardsPlayed
+    int mana
+    int numTurn
+    bool drawn
+    Grave pubGrave
+    start()
+    end()
+}
+class Hero{
+    dict stats
+    int id
+    string name
+    dict condition
+    int mana
+    Hand hand
+    list graveyard
+    int maxHand
+    Deck deck
+    Grave grave
+}
+class Hand{
+    list cards
+}
+class Deck{
+    int id
+    int cost
+    int maxCardCopy
+    int total
+    int position
+    bool empty
+}
+class Grave{
+    list grave
+    bool empty
+}
