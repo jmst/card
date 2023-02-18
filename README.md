@@ -7,6 +7,7 @@ C-->D;
 ```
 
 ```mermaid
+direction LR
 classDiagram
 Game "1"<|--"2" Hero
 Game <|-- Grave
