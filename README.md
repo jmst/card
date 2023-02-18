@@ -1,12 +1,4 @@
 ```mermaid
-graph TD;
-A-->B;
-A-->C;
-B-->D;
-C-->D;
-```
-
-```mermaid
 classDiagram
 direction RL
 Game "1"<|--"2" Hero
