@@ -57,4 +57,16 @@ class Hero{
 class Hand{
     list cards
 }
-```mermaid
+class Deck{
+    int id
+    int cost
+    int maxCardCopy
+    int total
+    int position
+    bool empty
+}
+class Grave{
+    list grave
+    bool empty
+}
+```
