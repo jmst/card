@@ -9,8 +9,6 @@ Hero <|-- "1.." Grave
 Deck "inf"<|--"20" Card
 Card <|-- CardState
 Hand <|-- "0.." Card
-Card <|-- "hello" Hand
-Hero <|-- "world" CardState
 class Card{
 int id
 string type
